@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimesheetMobileApp2021.WorkAssignmentPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Timesheet app" HorizontalTextAlignment="Center" TextColor="White" FontSize="28"/>
+            </Frame>
+
+           
+            <Label Text="Valitse työtehtävä"></Label>
+
+          
+            <Label x:Name="wa_lataus" />
+
+            <ListView x:Name="waList" StyleClass="lista" SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <TextCell Text="{Binding Title}" Detail="{Binding Deadline}"/>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+            <Label x:Name="lat_label"></Label>
+
+            <Label x:Name="lon_label"></Label>
+
+            <StackLayout Orientation="Horizontal">
+            <Button x:Name="startbutton" Text="Aloita työ" Clicked="startbutton_Clicked"></Button>
+                <Button x:Name="stopbutton" Text="Lopeta työ" Clicked="stopbutton_Clicked"></Button>
+            </StackLayout>
+       
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
